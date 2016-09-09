@@ -32,4 +32,20 @@ header {
   margin-top: -20px;
   margin-right: -20px;
   margin-left: -20px;
+  a {
+    border: 2px solid #e81c4f;
+    border-radius: 290486px;
+    color: white;
+    font-size: 0.6em;
+    letter-spacing: 0.2em;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: none 200ms ease-out;
+    transition-property: color, background;
+  }
+  a:hover {
+    background:  #e81c4f;
+    color: white;
+  }
 }
