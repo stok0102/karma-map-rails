@@ -1,0 +1,11 @@
+<h1>Deeds</h1>
+
+<ul>
+  <% @deeds.each do |deed| %>
+    <li><%= link_to deed.content, deed_path(deed) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "Record a deed", new_deed_path %>

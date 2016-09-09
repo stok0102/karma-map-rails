@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: karma-map_development
+
+test:
+  <<: *default
+  database: karma-map_test
+
+production:
+  <<: *default
+  database: karma-map_production
+  username: karma-map
+  password: <%= ENV['KARMA-MAP_DATABASE_PASSWORD'] %>
