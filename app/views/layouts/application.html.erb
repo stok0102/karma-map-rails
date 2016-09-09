@@ -9,10 +9,16 @@
   </head>
 
   <body>
+    <header>
+      <h1>Karma Map</h1>
+      <%= link_to "Caleb Stokka", 'https://github.com/stok0102'%>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+    </header>
+    <section>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
 
-    <%= yield %>
+      <%= yield %>
+    </section>
   </body>
 </html>
