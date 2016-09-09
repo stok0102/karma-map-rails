@@ -10,7 +10,7 @@ section {
   margin: 0 auto;
   max-width: 50em;
   line-height: 1.5;
-  padding: 4em 1em;
+  padding: 3em 1em;
   h1, h3 {
     margin-top: 1em;
     padding-top: 1em;
@@ -20,12 +20,13 @@ section {
 }
 
 header {
-  background-image: url("header-image.jpeg");
+  // background-image: url("header-image.jpeg");
+  background-color: #41ec75;
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
   line-height: 1.2;
-  padding: 15vw 2em;
+  padding: 5vw 2em;
   text-align: center;
   max-width: 100vw;
   margin-top: -20px;

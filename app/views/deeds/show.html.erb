@@ -4,6 +4,22 @@
 <h3><%= @deed.created_at %></h3>
 <h3><%= @deed.location %></h3>
 
+<% if @deed.comments.any? %>
+  <h4>Here are the comments for this deeds:</h4>
+
+  <ul>
+    <% @deed.comments.each do |comment| %>
+       <li>
+        Author: <%= comment.author %>, Content: <%= comment.content %>, | <%= link_to "Edit", edit_deed_comment_path(@deed, comment) %> | <%= link_to "Delete", deed_comment_path(@deed, comment), :data => {:confirm => "Delete?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no comments yet!</p>
+<% end %>
+
+<p><%= link_to "Add a comment", new_deed_comment_path(@deed) %></p>
+
 
 <p><%= link_to "Edit", edit_deed_path(@deed) %></p>
 <p><%= link_to "Delete", deed_path(@deed), :data => {:confirm => "Positive?", :method => "delete"} %></p>
