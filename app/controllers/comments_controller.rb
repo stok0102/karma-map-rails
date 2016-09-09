@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @deed = Deed.find(params[:deed_id])
     @comment = @deed.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = "Comment has been added"
       redirect_to deed_path(@comment.deed)
     else
       render :new
@@ -23,6 +24,7 @@ class CommentsController < ApplicationController
     @deed = Deed.find(params[:deed_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
+      flash[:notice] = "Comment has been updated"
       redirect_to deed_path(@comment.deed)
     else
       render :edit
@@ -33,6 +35,7 @@ class CommentsController < ApplicationController
     @deed = Deed.find(params[:deed_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
+    flash[:notice] = "Comment has been deleted"
     redirect_to deed_path(@deed)
   end
 
