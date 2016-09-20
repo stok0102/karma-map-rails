@@ -1,6 +1,15 @@
 class DeedsController < ApplicationController
   def index
     @deeds = Deed.all
+    if current_user
+      if current_user.account
+        render :index
+      else
+        redirect_to new_account_path
+      end
+    else
+      redirect_to new_user_registration_path  
+    end
   end
 
   def show
