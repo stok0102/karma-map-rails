@@ -5,8 +5,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    current_user
     @deed = Deed.find(params[:deed_id])
     @comment = @deed.comments.new(comment_params)
+    @comment.account_id = current_user.account.id
     if @comment.save
       flash[:notice] = "Comment has been added"
       redirect_to deed_path(@comment.deed)
@@ -41,6 +43,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:author, :content, :deed_id)
+    params.require(:comment).permit(:account_id, :content, :deed_id)
   end
 end
