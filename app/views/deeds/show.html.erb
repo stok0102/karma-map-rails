@@ -10,7 +10,10 @@
   <ul>
     <% @deed.comments.each do |comment| %>
        <li>
-        Author: <%= Account.find(comment.account_id).username %>, Content: <%= comment.content %> | <%= link_to "Edit Comment", edit_deed_comment_path(@deed, comment) %> | <%= link_to "Delete Comment", deed_comment_path(@deed, comment), remote: true, id: "delete_comment", :data => {:confirm => "Delete?", :method => "delete"} %>
+        Author: <%= Account.find(comment.account_id).username %>, Content: <%= comment.content %> |
+        <% if comment.account_id == current_user.account.id %>
+          <%= link_to "Edit Comment", edit_deed_comment_path(@deed, comment) %> | <%= link_to "Delete Comment", deed_comment_path(@deed, comment), remote: true, id: "delete_comment", :data => {:confirm => "Delete?", :method => "delete"} %>
+        <% end %>
       </li>
     <% end %>
   </ul>
