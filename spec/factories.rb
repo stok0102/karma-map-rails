@@ -9,7 +9,6 @@ FactoryGirl.define do
   end
 
   factory :comment do
-    author 'John'
     content 'This is great'
   end
 end

@@ -6,7 +6,6 @@ describe 'the edit comment path' do
     comment = FactoryGirl.create(:comment, deed_id: deed.id)
     visit deed_path(deed)
     click_on "Edit Comment"
-    fill_in "Author", :with => "Rick"
     fill_in "Content", :with => "This is good"
     click_on "Update Comment"
     expect(page).to have_content("This is good")
@@ -17,7 +16,6 @@ describe 'the edit comment path' do
     comment = FactoryGirl.create(:comment, deed_id: deed.id)
     visit deed_path(deed)
     click_on "Edit Comment"
-    fill_in "Author", :with => ""
     fill_in "Content", :with => ""
     click_on "Update Comment"
     expect(page).to have_content("Author can't be blank")
