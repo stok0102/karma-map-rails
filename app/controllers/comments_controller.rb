@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
       flash[:notice] = "Comment has been added"
       respond_to do |format|
         format.html { redirect_to deed_path(@comment.deed) }
-        format.json 
+        format.json
       end
       #
     else
@@ -41,8 +41,11 @@ class CommentsController < ApplicationController
     @deed = Deed.find(params[:deed_id])
     @comment = Comment.find(params[:id])
     @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to deed_path(@deed) }
+      format.json
+    end
     flash[:notice] = "Comment has been deleted"
-    redirect_to deed_path(@deed)
   end
 
   private
