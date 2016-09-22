@@ -11,7 +11,11 @@ class CommentsController < ApplicationController
     @comment.account_id = current_user.account.id
     if @comment.save
       flash[:notice] = "Comment has been added"
-      redirect_to deed_path(@comment.deed)
+      respond_to do |format|
+        format.html { redirect_to deed_path(@comment.deed) }
+        format.json 
+      end
+      #
     else
       render :new
     end

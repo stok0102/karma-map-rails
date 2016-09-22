@@ -18,7 +18,7 @@
   <p>There are no comments yet!</p>
 <% end %>
 
-<p><%= link_to "Add a comment", new_deed_comment_path(@deed) %></p>
+<p><%= link_to "Add a comment", new_deed_comment_path(@deed), id: "new_comment", remote: true %></p>
 
 
 <p><%= link_to "Edit", edit_deed_path(@deed) %></p>
