@@ -1,18 +1,19 @@
 class DeedsController < ApplicationController
   def index
     @deeds = Deed.all
-    # if current_user
-    #   if current_user.account
-    #     render :index
-    #   else
-    #     redirect_to new_account_path
-    #   end
-    # else
-    #   redirect_to new_user_registration_path
-    # end
+    if current_user
+      if current_user.account
+        render :index
+      else
+        redirect_to new_account_path
+      end
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   def show
+    current_user
     @deed = Deed.find(params[:id])
   end
 
@@ -21,7 +22,9 @@ class DeedsController < ApplicationController
   end
 
   def create
+    current_user
     @deed = Deed.new(deed_params)
+    @deed.account_id = current_user.account.id
     if @deed.save
       flash[:notice] = "Deed has been added"
       redirect_to deeds_path
@@ -53,6 +56,6 @@ class DeedsController < ApplicationController
 
 private
   def deed_params
-    params.require(:deed).permit(:content, :location)
+    params.require(:deed).permit(:content, :location, :account_id)
   end
 end
