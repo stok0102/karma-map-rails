@@ -20,6 +20,8 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
+  include Warden::Test::Helpers
+
   config.after :each do
     Warden.test_reset!
   end

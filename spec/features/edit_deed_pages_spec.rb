@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe "the edit a deed process" do
   it "edits a deed" do
-    deed = Deed.create(:content => 'Washed behind my ears', :location => "Siberia")
+    user = FactoryGirl.create(:user)
+    account = FactoryGirl.create(:account, user_id: user.id)
+    login_as(user, :scope => :user)
+    deed = FactoryGirl.create(:deed, :account_id => account.id)
     visit deed_path(deed)
     click_on 'Edit'
     fill_in 'Content', :with => 'Cleaned my room'
@@ -11,7 +14,10 @@ describe "the edit a deed process" do
   end
 
   it "gives error when no description is entered" do
-    deed = Deed.create(:content => 'Washed behind my ears', :location => "Siberia")
+    user = FactoryGirl.create(:user)
+    account = FactoryGirl.create(:account, user_id: user.id)
+    login_as(user, :scope => :user)
+    deed = FactoryGirl.create(:deed, :account_id => account.id)
     visit deed_path(deed)
     click_on 'Edit'
     fill_in 'Content', :with => ''
