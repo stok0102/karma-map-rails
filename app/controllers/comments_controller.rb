@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
         format.html { redirect_to deed_path(@comment.deed) }
         format.json
       end
-      #
     else
       render :new
     end

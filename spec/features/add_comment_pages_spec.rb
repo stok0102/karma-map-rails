@@ -6,8 +6,7 @@ describe "the add a comment process" do
     login_as(user, :scope => :user)
     account = FactoryGirl.create(:account)
     account.user_id = user.id
-    console.log(account.user_id)
-    deed = Deed.create(:content => 'Washed behind my ears', :location => "Siberia")
+    deed = FactoryGirl.create(:deed, :account_id => account.id)
     visit deed_path(deed)
     click_on "Add a comment"
     fill_in 'Content', :with => 'Said gesundheit'
