@@ -1,4 +1,4 @@
-require 'rails_helper'
+  require 'rails_helper'
 
 describe 'the edit comment path' do
   it "allows user to edit a comment" do

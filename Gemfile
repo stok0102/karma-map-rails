@@ -12,6 +12,11 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails_admin', '~> 1.0'
+gem 'geocoder'
+gem 'rest-client'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'dotenv'
 
 group :development, :test do
   gem 'byebug', platform: :mri

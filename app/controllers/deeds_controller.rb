@@ -15,6 +15,11 @@ class DeedsController < ApplicationController
   def show
     current_user
     @deed = Deed.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@deed) do |deed, marker, infowindow|
+      marker.lat deed.latitude
+      marker.lng deed.longitude
+      marker.infowindow deed.location
+    end
   end
 
   def new
@@ -56,6 +61,6 @@ class DeedsController < ApplicationController
 
 private
   def deed_params
-    params.require(:deed).permit(:content, :location, :account_id)
+    params.require(:deed).permit(:content, :location, :account_id, :latitude, :longitude)
   end
 end
