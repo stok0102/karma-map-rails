@@ -16,7 +16,6 @@ gem 'geocoder'
 gem 'rest-client'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-gem 'dotenv'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -28,6 +27,7 @@ group :development, :test do
   gem 'factory_girl_rails', '>4.0'
   gem 'simplecov', require: false
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 group :development do
