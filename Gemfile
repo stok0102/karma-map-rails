@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails_admin', '~> 1.0'
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'geocoder'
 gem 'rest-client'
 gem 'gmaps4rails'
@@ -24,10 +25,12 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'factory_girl_rails', '>4.0'
   gem 'simplecov', require: false
   gem 'letter_opener'
-  gem 'dotenv-rails'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do

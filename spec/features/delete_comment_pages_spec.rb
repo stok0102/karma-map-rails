@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the delete a comment process" do
-  it "deletes a comment" do
+  it "deletes a comment", js: true do
     user = FactoryGirl.create(:user)
     account = FactoryGirl.create(:account, user_id: user.id)
     login_as(user, :scope => :user)

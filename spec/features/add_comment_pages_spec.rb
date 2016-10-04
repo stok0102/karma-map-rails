@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the add a comment process" do
-  it "adds a new comment" do
+  it "adds a new comment", js: true do
     user = FactoryGirl.create(:user)
     account = FactoryGirl.create(:account, user_id: user.id)
     login_as(user, :scope => :user)
@@ -13,7 +13,7 @@ describe "the add a comment process" do
     expect(page).to have_content 'gesundheit'
   end
 
-  it "gives error when no name is entered" do
+  it "gives error when no name is entered", js: true do
     user = FactoryGirl.create(:user)
     account = FactoryGirl.create(:account, user_id: user.id)
     login_as(user, :scope => :user)

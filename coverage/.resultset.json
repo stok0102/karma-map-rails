@@ -32,15 +32,27 @@
         1,
         1,
         1,
-        null,
-        1,
-        null,
-        1,
         1,
         null,
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        25,
+        25,
+        null,
+        null,
         null,
         1,
         null,
@@ -98,6 +110,14 @@
         1,
         null,
         1
+      ],
+      "/home/caleb/Projects/karma-map-rails/config/spring.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        5
       ],
       "/home/caleb/Projects/karma-map-rails/config/environments/test.rb": [
         1,
@@ -697,8 +717,13 @@
         null,
         null,
         1,
-        11,
-        11,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13,
+        null,
         null,
         null,
         1,
@@ -770,6 +795,8 @@
         null
       ],
       "/home/caleb/Projects/karma-map-rails/app/models/deed.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -1018,6 +1045,6 @@
         null
       ]
     },
-    "timestamp": 1474660802
+    "timestamp": 1475610173
   }
 }
