@@ -1,7 +1,7 @@
   require 'rails_helper'
 
 describe 'the edit comment path' do
-  it "allows user to edit a comment" do
+  it "allows user to edit a comment",js: true do
     user = FactoryGirl.create(:user)
     account = FactoryGirl.create(:account, user_id: user.id)
     login_as(user, :scope => :user)
@@ -14,7 +14,7 @@ describe 'the edit comment path' do
     expect(page).to have_content("This is good")
   end
 
-  it "does not save with empty strings" do
+  it "does not save with empty strings", js: true do
     user = FactoryGirl.create(:user)
     account = FactoryGirl.create(:account, user_id: user.id)
     login_as(user, :scope => :user)
